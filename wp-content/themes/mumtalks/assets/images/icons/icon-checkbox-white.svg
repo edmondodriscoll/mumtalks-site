@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-checkbox-white</title>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WSBE23-Contact-Us" transform="translate(-639.000000, -979.000000)">
+            <g id="Group-11" transform="translate(637.000000, 355.000000)">
+                <g id="Group" transform="translate(1.000000, 590.000000)">
+                    <g id="Group-5-Copy" transform="translate(0.000000, 33.000000)">
+                        <g id="icon-checkbox-white" transform="translate(1.000000, 1.000000)">
+                            <rect id="ViewBox" x="0" y="0" width="24" height="24"></rect>
+                            <path d="M19.2317787,5.3598156 C19.5853428,4.9355387 20.2159075,4.87821464 20.6401844,5.23177872 C21.0318246,5.55814556 21.110795,6.12053661 20.8425391,6.53883241 L20.7682213,6.6401844 L10.7682213,18.6401844 C10.418662,19.0596556 9.80471239,19.1163346 9.38587526,18.7893779 L9.29289322,18.7071068 L3.29289322,12.7071068 C2.90236893,12.3165825 2.90236893,11.6834175 3.29289322,11.2928932 C3.65337718,10.9324093 4.22060824,10.9046797 4.61289944,11.2097046 L4.70710678,11.2928932 L9.932,16.517 L19.2317787,5.3598156 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

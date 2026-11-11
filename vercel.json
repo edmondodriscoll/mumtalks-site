@@ -1,0 +1,15 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/forms/submit.php", "destination": "/api/submit" }
+  ],
+  "redirects": [
+    { "source": "/event_listing_type/upcoming-events", "destination": "/upcoming-events/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/wp-content/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
+    { "source": "/_img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
+    { "source": "/blog-images/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] }
+  ]
+}

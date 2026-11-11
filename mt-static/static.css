@@ -1,0 +1,8 @@
+/* Small additions for the static version of the site */
+.mt-empty{padding:40px 15px;text-align:center;font-size:18px;color:#552e35;width:100%}
+.wpcf7-form.submitting input[type=submit]{opacity:.6;pointer-events:none}
+.wpcf7-form .wpcf7-not-valid-tip{display:block;color:#dc3232;font-size:14px;margin-top:4px}
+.wpcf7-form .wpcf7-response-output:empty{display:none}
+.wpcf7-form.sent .wpcf7-response-output{border-color:#46b450}
+.wpcf7-form.invalid .wpcf7-response-output,.wpcf7-form.failed .wpcf7-response-output{border-color:#dc3232}
+.menu-item-blog.current-menu-item > a{color:#b76371}

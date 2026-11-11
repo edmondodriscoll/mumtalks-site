@@ -1,0 +1,37 @@
+<section class="mt-search">
+  <div class="container">
+    <div class="title-sec p-0">
+      <h6>Search</h6>
+      <h1 id="mt-search-title">Search Mum Talks</h1>
+    </div>
+    <form action="/search/" method="get" role="search">
+      <input type="search" name="s" id="mt-q" placeholder="Search events, services, stories…" aria-label="Search">
+      <button type="submit">Search</button>
+    </form>
+    <ul class="mt-results" id="mt-results"></ul>
+  </div>
+</section>
+<script>
+(function(){
+  var q=(new URLSearchParams(location.search).get('s')||'').trim();
+  var input=document.getElementById('mt-q'),out=document.getElementById('mt-results'),title=document.getElementById('mt-search-title');
+  input.value=q; if(!q) return;
+  title.textContent='Results for “'+q+'”';
+  var esc=function(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var re=new RegExp('('+q.split(/\s+/).map(function(w){return w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|')+')','ig');
+  fetch('/search-index.json').then(function(r){return r.json()}).then(function(d){
+    var words=q.toLowerCase().split(/\s+/);
+    var res=d.index.map(function(p){
+      var t=p.t.toLowerCase(),x=p.x.toLowerCase(),score=0;
+      words.forEach(function(w){ if(t.indexOf(w)>-1)score+=10; var i=-1,n=0; while((i=x.indexOf(w,i+1))>-1&&n<20){n++} score+=n; });
+      return {p:p,score:score};
+    }).filter(function(r){return r.score>0}).sort(function(a,b){return b.score-a.score});
+    if(!res.length){out.innerHTML='<li><p>Sorry, nothing matched your search. Try another word, or browse our <a href="/upcoming-events/">upcoming events</a>.</p></li>';return;}
+    out.innerHTML=res.map(function(r){
+      var x=r.p.x,i=x.toLowerCase().indexOf(words[0]);var start=Math.max(0,i-80);
+      var snip=(start>0?'…':'')+x.substr(start,220)+'…';
+      return '<li><a href="'+r.p.u+'">'+esc(r.p.t)+'</a><p>'+esc(snip).replace(re,'<mark>$1</mark>')+'</p></li>';
+    }).join('');
+  });
+})();
+</script>
