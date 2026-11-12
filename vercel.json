@@ -21,6 +21,10 @@
     {
       "source": "/blog/:slug/",
       "destination": "/api/blog?slug=:slug"
+    },
+    {
+      "source": "/search-index.json",
+      "destination": "/api/search-index"
     }
   ],
   "redirects": [
@@ -87,6 +91,9 @@
   "functions": {
     "api/blog.js": {
       "includeFiles": "{_templates/**,blog/**,404.html}"
+    },
+    "api/search-index.js": {
+      "includeFiles": "_templates/search-index.json"
     }
   }
 }

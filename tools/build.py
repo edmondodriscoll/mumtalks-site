@@ -229,7 +229,7 @@ def from_template(title, description, inner_html, extra_head=''):
         s.head.append(BeautifulSoup(extra_head, 'html.parser'))
     return s
 
-json.dump({'index': index}, open(os.path.join(OUT, 'search-index.json'), 'w'))
+json.dump({'index': index}, open(os.path.join(OUT, '_templates', 'search-index.json'), 'w'))
 
 shutil.copytree(os.path.join(STATIC, 'mt-static'), os.path.join(OUT, 'mt-static'))
 shutil.copytree(os.path.join(STATIC, 'forms'), os.path.join(OUT, 'forms'))
@@ -251,7 +251,7 @@ for p in posts:
     index.append({'t': p['title'], 'u': '/blog/' + p['slug'] + '/', 'x': re.sub(r'<[^>]+>', ' ', p['body'])[:4000]})
 write('/blog/', from_template('Blog', 'Stories, honesty and support for mums from the Mum Talks community.',
                               blog.render_index(posts), blog_head))
-json.dump({'index': index}, open(os.path.join(OUT, 'search-index.json'), 'w'))
+json.dump({'index': index}, open(os.path.join(OUT, '_templates', 'search-index.json'), 'w'))
 os.makedirs(os.path.join(OUT, 'blog-images'), exist_ok=True)
 for f in os.listdir(os.path.join(STATIC, 'blog-images')):
     shutil.copyfile(os.path.join(STATIC, 'blog-images', f), os.path.join(OUT, 'blog-images', f))
