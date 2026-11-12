@@ -216,7 +216,67 @@ border-radius:50px;
 
 </style>
 <style type="text/css">.directory-cards .dir_items,.up_events_list .event_list{display:none}</style>
-<link href="/mt-static/static.css" rel="stylesheet"/><link href="/mt-static/blog.css" rel="stylesheet"/></head>
+<link href="/mt-static/static.css" rel="stylesheet"/><link href="/mt-static/blog.css" rel="stylesheet"/><style>
+.mt-blog-index .mt-journal-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  padding: clamp(28px, 6vw, 72px);
+  border-radius: 28px;
+  background: var(--mt-cream);
+  color: var(--mt-plum);
+}
+.mt-journal-heading { max-width: 640px; }
+.mt-journal-heading .mt-journal-label {
+  margin: 0 0 16px;
+  color: var(--mt-wine);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.mt-journal-heading h1 {
+  margin: 0 0 16px;
+  font-family: new-reason, Georgia, serif;
+  font-size: clamp(36px, 6vw, 70px);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  color: var(--mt-plum);
+}
+.mt-journal-heading > p:last-child {
+  margin: 0;
+  max-width: 38ch;
+  font-size: 18px;
+  line-height: 1.55;
+}
+.mt-journal-intro > a {
+  color: var(--mt-wine);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.mt-journal-stories { margin-top: clamp(32px, 6vw, 60px); }
+.mt-journal-stories > h2 {
+  margin: 0 0 20px;
+  font-family: new-reason, Georgia, serif;
+  font-size: clamp(26px, 4vw, 38px);
+  color: var(--mt-plum);
+}
+.mt-journal-stories .mt-card--featured .mt-card-body { background: #fff; }
+.mt-journal-stories .mt-card-meta, .mt-journal-stories .mt-read { color: var(--mt-wine); }
+.mt-journal-stories .mt-tag { background: var(--mt-cream); color: var(--mt-wine); }
+.mt-blog-index a:focus-visible { outline: 3px solid var(--mt-wine); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .mt-journal-stories .mt-card, .mt-journal-stories .mt-card-img img {
+    transform: none !important;
+    transition: none;
+    opacity: 1;
+  }
+}
+</style></head>
 <body class="privacy-policy wp-singular page-template page-template-page-templates page-template-tc page-template-page-templatestc-php page page-id-3 wp-custom-logo wp-theme-mumtalks mumtalks" id="body">
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-56WLZBZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <div class="site" id="page">
@@ -293,12 +353,18 @@ border-radius:50px;
 </header><span id="primary" tabindex="-1"></span>
 <section class="mt-blog-index">
 <div class="container">
-<div class="title-sec p-0 mt-blog-title" data-aos="fade-up">
-<h6>Get Empowered</h6>
-<h1>The Mum Talks Blog</h1>
-<p>Honest stories, real conversations and support for the many seasons of motherhood, and of being a daughter too.</p>
+<header class="mt-journal-intro">
+<div class="mt-journal-heading">
+<p class="mt-journal-label">The Mum Talks Blog</p>
+<h1>Motherhood, in all its seasons</h1>
+<p>Stories about family life, changing relationships and finding your people along the way.</p>
 </div>
+<a href="/upcoming-events/">Find a Mum Talks event <span aria-hidden="true">↗</span></a>
+</header>
+<section class="mt-journal-stories" aria-labelledby="mt-latest">
+<h2 id="mt-latest">Latest stories</h2>
 {{CARDS}}
+</section>
 </div>
 </section>
 <section class="get-empowered">
