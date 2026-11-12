@@ -28,6 +28,31 @@
       "source": "/event_listing_type/upcoming-events",
       "destination": "/upcoming-events/",
       "permanent": true
+    },
+    {
+      "source": "/event_listing_type/baby-club/",
+      "destination": "/event-type/baby-club/",
+      "permanent": true
+    },
+    {
+      "source": "/event_listing_type/bump-talks/",
+      "destination": "/event-type/bump-talks/",
+      "permanent": true
+    },
+    {
+      "source": "/event_listing_type/teen-talks/",
+      "destination": "/event-type/teen-talks/",
+      "permanent": true
+    },
+    {
+      "source": "/event_listing_type/mum-talks-meetups/",
+      "destination": "/event-type/mum-talks-meetups/",
+      "permanent": true
+    },
+    {
+      "source": "/event_listing_type/upcoming-events/",
+      "destination": "/upcoming-events/",
+      "permanent": true
     }
   ],
   "headers": [

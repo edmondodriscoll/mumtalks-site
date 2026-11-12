@@ -6,3 +6,8 @@
 .wpcf7-form.sent .wpcf7-response-output{border-color:#46b450}
 .wpcf7-form.invalid .wpcf7-response-output,.wpcf7-form.failed .wpcf7-response-output{border-color:#dc3232}
 .menu-item-blog.current-menu-item > a{color:#b76371}
+
+/* Instagram feed: the saved photos expired with the old WordPress plugin, and "Load More" needs WordPress.
+   Hide the empty grid and the button; keep the "Follow on Instagram" link. */
+#sb_instagram #sbi_images, #sb_instagram #sbi_load .sbi_load_btn { display: none !important; }
+#sb_instagram #sbi_load { display: flex; justify-content: center; margin-top: 10px; }
