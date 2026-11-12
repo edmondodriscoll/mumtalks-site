@@ -22,6 +22,16 @@ const FALLBACK_IMG = '/_img/wp-content/uploads/2023/01/empowered-img-16e88f49.pn
 // Posts that live as hand-built pages in /blog/<slug>/index.html
 const STATIC_POSTS = [
   {
+    "slug": "small-ways-to-move-on-busy-days",
+    "title": "Small ways to move on busy days",
+    "excerpt": "A two-song dance break, a tiny treasure hunt or a walk around the block. A little play can make movement easier to fit into family life.",
+    "date": "2026-11-12T11:00:00",
+    "minutes": 2,
+    "tag": "Everyday Wellbeing",
+    "image": "/blog-images/small-ways-to-move-on-busy-days.webp",
+    "alt": "A mother and child out for a walk on a leafy autumn footpath"
+  },
+  {
     slug: 'when-your-brother-is-the-favourite-child',
     title: 'The Golden Boy: When Your Brother Is the Favourite Child',
     excerpt: "For the sisters who grew up watching their brother get the bigger welcome, the lighter load and the louder applause. It wasn't in your head, and you're not on your own.",
