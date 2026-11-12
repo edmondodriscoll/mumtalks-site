@@ -8,7 +8,8 @@ It needs no WordPress, database or build step: it's plain HTML, CSS and JS.
 | Path | What it is |
 |---|---|
 | `index.html`, `upcoming-events/`, `event/…`, `directory/`, `about-us/` … | Every page of the live site |
-| `blog/` | Blog index and posts. Add more in `blog.py` in the build tools, or copy a post folder |
+| `blog/` | Hand-built blog posts (one folder each) |
+| `api/blog.js` + `_templates/` | Shows the blog list and WordPress.com posts in the Mum Talks design (Vercel only) |
 | `wp-content/`, `_img/`, `_wp/` | The theme, plugin assets and all images (stored locally) |
 | `mt-static/` | Scripts that replace the WordPress server features: event and directory filters, forms, blog styles |
 | `search/` + `search-index.json` | Site search (runs in the browser) |
@@ -22,6 +23,13 @@ It needs no WordPress, database or build step: it's plain HTML, CSS and JS.
 - **Ticket booking** still uses your Ticket Tailor widgets, which work anywhere.
 - **Fonts** come from your Adobe Fonts (Typekit) kit `bxp1foc`. Add any new domain (e.g. `*.vercel.app`) in Adobe Fonts > Web Projects, or the headings fall back to a system font.
 - **Cookiebot, Google Tag Manager, Clarity and Gauges** are kept. Add new domains in each dashboard if you use them.
+
+## Writing blog posts (WordPress.com)
+Posts are written at **mumtalksie.wordpress.com** (wp-admin > Posts > Add New). Only published posts appear on
+mumtalks.ie, at `/blog/<post-slug>/`, within about 5 minutes. Drafts stay private. Set a **featured image** on each
+post; it becomes the hero image and the card picture. The WordPress.com site must be launched (public) for its posts
+to be readable. It doesn't need to be indexed by search engines. To use a different WordPress.com site, set the
+`WPCOM_SITE` environment variable in Vercel to its ID or domain.
 
 ## Deploying on Vercel
 Import the repo in Vercel (Framework preset: **Other**, no build command, output = root). Then add environment variables:

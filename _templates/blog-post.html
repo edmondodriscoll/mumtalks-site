@@ -20,18 +20,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://gmpg.org/xfn/11" rel="profile"/>
 <link href="https://use.typekit.net/bxp1foc.css" rel="stylesheet"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<title>Blog - Mum Talks</title>
+<title>{{TITLE}}</title>
 
 <meta content="en_US" property="og:locale"/>
-<meta content="article" property="og:type"/>
-<meta content="Blog - Mum Talks" property="og:title"/>
-<meta content="Stories, honesty and support for mums from the Mum Talks community." property="og:description"/>
-<meta content="/privacy-policy/" property="og:url"/>
+
+
+
+
 <meta content="Mum Talks" property="og:site_name"/>
 <meta content="2023-02-17T16:52:18+00:00" property="article:modified_time"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Est. reading time" name="twitter:label1"/>
-<meta content="5 minutes" name="twitter:data1"/>
+
+
+
 
 <link href="//i0.wp.com" rel="preconnect"/>
 <link href="//c0.wp.com" rel="preconnect"/>
@@ -216,7 +216,7 @@ border-radius:50px;
 
 </style>
 <style type="text/css">.directory-cards .dir_items,.up_events_list .event_list{display:none}</style>
-<link href="/mt-static/static.css" rel="stylesheet"/><link href="/mt-static/blog.css" rel="stylesheet"/></head>
+<link href="/mt-static/static.css" rel="stylesheet"/><link href="/mt-static/blog.css" rel="stylesheet"/>{{HEAD_META}}</head>
 <body class="privacy-policy wp-singular page-template page-template-page-templates page-template-tc page-template-page-templatestc-php page page-id-3 wp-custom-logo wp-theme-mumtalks mumtalks" id="body">
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-56WLZBZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <div class="site" id="page">
@@ -291,25 +291,20 @@ border-radius:50px;
 </nav>
 </div>
 </header>
-<section class="mt-blog-index">
-<div class="container">
-<div class="title-sec p-0 mt-blog-title" data-aos="fade-up">
-<h6>Get Empowered</h6>
-<h1>The Mum Talks Blog</h1>
-<p>Honest stories, real conversations and support for the many seasons of motherhood, and of being a daughter too.</p>
-</div>
-<a class="mt-card mt-card--featured" data-aos="fade-up" href="/blog/when-your-brother-is-the-favourite-child/">
-<div class="mt-card-img"><img alt="A young boy hugging his little sister in a sunlit field" loading="lazy" src="/blog-images/golden-boy-hero-wide.jpg"/></div>
-<div class="mt-card-body">
-<span class="mt-tag">Family Life</span>
-<h3>The Golden Boy: When Your Brother Is the Favourite Child</h3>
-<p>For the sisters who grew up watching their brother get the bigger welcome, the lighter load and the louder applause. It wasn't in your head, and you're not on your own.</p>
-<span class="mt-card-meta">11 Nov 2026 · 8 min read</span>
-<span class="mt-read">Read the story →</span>
-</div>
-</a>
-</div>
-</section>
+<div aria-hidden="true" class="mt-progress"><span></span></div>
+{{ARTICLE}}
+<script>
+(function(){
+  var bar=document.querySelector('.mt-progress span'),art=document.querySelector('.mt-post-body');
+  function upd(){if(!bar||!art)return;var r=art.getBoundingClientRect(),h=r.height-window.innerHeight;var p=Math.min(1,Math.max(0,-r.top/(h>0?h:1)));bar.style.width=(p*100)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});upd();
+  document.querySelectorAll('.mt-copy').forEach(function(b){b.addEventListener('click',function(){
+    var u=b.getAttribute('data-url');
+    (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){b.textContent='Link copied!';},function(){window.prompt('Copy this link:',u);});
+    setTimeout(function(){b.textContent='Copy link';},2500);
+  });});
+})();
+</script>
 <section class="get-empowered">
 <div class="container">
 <div class="row">

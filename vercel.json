@@ -2,14 +2,66 @@
   "cleanUrls": false,
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/forms/submit.php", "destination": "/api/submit" }
+    {
+      "source": "/forms/submit.php",
+      "destination": "/api/submit"
+    },
+    {
+      "source": "/blog",
+      "destination": "/api/blog"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/api/blog"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/api/blog?slug=:slug"
+    },
+    {
+      "source": "/blog/:slug/",
+      "destination": "/api/blog?slug=:slug"
+    }
   ],
   "redirects": [
-    { "source": "/event_listing_type/upcoming-events", "destination": "/upcoming-events/", "permanent": true }
+    {
+      "source": "/event_listing_type/upcoming-events",
+      "destination": "/upcoming-events/",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/wp-content/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
-    { "source": "/_img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
-    { "source": "/blog-images/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] }
-  ]
+    {
+      "source": "/wp-content/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/_img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/blog-images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/blog.js": {
+      "includeFiles": "{_templates/**,blog/**,404.html}"
+    }
+  }
 }
